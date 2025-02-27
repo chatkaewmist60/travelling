@@ -1,6 +1,7 @@
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import dayjs from "dayjs";
+import { useState } from "react";
 
 const holidays = [
   { date: "2025-01-01", name: "วันขึ้นปีใหม่" },
@@ -12,8 +13,8 @@ const holidays = [
 ];
 
 const HolidayCalendar = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedHoliday, setSelectedHoliday] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedHoliday, setSelectedHoliday] = useState(new Date());
 
   const onDateChange = (date) => {
     const formattedDate = dayjs(date).format("YYYY-MM-DD");

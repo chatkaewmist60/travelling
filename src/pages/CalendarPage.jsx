@@ -1,8 +1,10 @@
-import React from 'react'
+import HolidayCalendar from '../components/HolidayCalendar'
 
 function CalendarPage() {
   return (
-    <div>CalendarPage</div>
+    <div>CalendarPage
+      <HolidayCalendar/>
+    </div>
   )
 }
 

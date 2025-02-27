@@ -13,7 +13,7 @@ function Homepage() {
       <ChooseTour />
       <PopularTour />
       <TopTrending />
-<Footer />
+      <Footer />
 
     </div>
   )

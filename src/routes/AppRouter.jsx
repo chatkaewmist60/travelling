@@ -4,6 +4,7 @@ import CalendarPage from "../pages/calendarPage"
 import ToursPage from "../pages/toursPage"
 import SharePlanPage from "../pages/sharePlanPage"
 import Navbar from "../components/Navbar"
+import Register from "../pages/Register"
 
 const guestRouter = createBrowserRouter([
      {
@@ -16,7 +17,9 @@ const guestRouter = createBrowserRouter([
                { index: true, element: <Homepage /> },
                { path: 'calendar', element: <CalendarPage /> },
                { path: 'tour', element: <ToursPage /> },
-               { path: 'share', element: <SharePlanPage /> }
+               { path: 'share', element: <SharePlanPage /> },
+               { path: 'register', element: <Register /> }
+
           ]
      }
 ])
