@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default
+}
+
+@theme static {
+  --font-display: "Moon Dance", serif;
+  --color-aaa: #EB662B
+  /* --font-weight: 400; */
+}
+
+/* :root {
+  font-family: "Moon Dance", serif;
+} */
+
