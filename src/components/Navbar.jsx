@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router"
+import { Link, useLocation, useNavigate } from "react-router"
 
 
 function Navbar() {
@@ -10,6 +10,12 @@ function Navbar() {
 
      const { pathname } = useLocation()
      console.log(pathname)
+
+     let navigate = useNavigate();
+     const routeChange = () => {
+          let path = '/register';
+          navigate(path);
+     }
 
      return (
           <div className="flex items-center justify-between w-[80vw] mx-auto py-4">
@@ -33,9 +39,17 @@ function Navbar() {
                               ? "font-medium text-orange-700"
                               : "hover:underline"
                               }`}>{menu.text}
-                              </Link>
+                         </Link>
                     ))}
-                    <button className="py-3 px-7 rounded-full bg-orange-500 text-white hover:underline cursor-pointer ">Login/Register</button>
+                    <button className="py-3 px-7 rounded-full 
+                    bg-orange-500 
+                    text-white hover:underline 
+                    cursor-pointer " onClick={routeChange}>Register</button>
+
+                    <button className="py-3 px-7 rounded-full 
+                    bg-orange-500 
+                    text-white hover:underline 
+                    cursor-pointer " onClick={routeChange}>Login</button>
                </div>
           </div>
      )
@@ -46,8 +60,8 @@ function Navbar() {
 export default Navbar
 
 
-// import { Link, useLocation } from "react-router-dom"; 
-// import logo from "../assets/images/logo.jpg"; // ถ้าใช้จาก `src/assets/images/`
+// import { Link, useLocation } from "react-router-dom";
+// import logo from "../assets/images/logo.jpg"; // ถ้าใช้จาก src/assets/images/
 
 // function Navbar() {
 //   const menus = [

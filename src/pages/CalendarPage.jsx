@@ -1,9 +1,11 @@
-import HolidayCalendar from '../components/HolidayCalendar'
+import BudgetTravelExpenses from '../components/BudgetTravelExpenses.jsx'
+import LargeCalendar from '../components/LargeCalendar'
 
 function CalendarPage() {
   return (
-    <div>CalendarPage
-      <HolidayCalendar/>
+    <div>
+      <LargeCalendar/>
+      <BudgetTravelExpenses />
     </div>
   )
 }

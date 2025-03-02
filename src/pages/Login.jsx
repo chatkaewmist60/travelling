@@ -1,50 +1,37 @@
-import TripCard from "../components/TripCard";
+import React from 'react'
 
-const trips = [
-  {
-    image: "https://via.placeholder.com/150", // แทนด้วย URL จริง
-    location: "Paris, France",
-    title: "Phi Phi Islands Adventure Day Trip with Seaview Lunch by V. Marine Tour",
-    price: 114,
-    oldPrice: 1200,
-    days: 3,
-    isFeatured: false,
-  },
-  {
-    image: "https://via.placeholder.com/150", // แทนด้วย URL จริง
-    location: "Paris, France",
-    title: "Phi Phi Islands Adventure Day Trip with Seaview Lunch by V. Marine Tour",
-    price: 114,
-    oldPrice: 1200,
-    days: 3,
-    isFeatured: false,
-  },
-  {
-    image: "https://via.placeholder.com/150", // แทนด้วย URL จริง
-    location: "Paris, France",
-    title: "Phi Phi Islands Adventure Day Trip with Seaview Lunch by V. Marine Tour",
-    price: 114,
-    oldPrice: 1200,
-    days: 3,
-    isFeatured: true,
-  },
-];
-
-const TripList = () => {
+function Login() {
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold">สวัสดี, คุณพลอยฉัตร</h1>
-      <div className="grid grid-cols-1 gap-4 mt-6">
-        {trips.map((trip, index) => (
-          <TripCard key={index} {...trip} />
-        ))}
 
-      
+    <div>Login
+
+      <div className='flex flex-1 items-center justify-center'>
+        <div class="card glass w-full">
+          <div class="card-body flex justify-center">
+            <h2 class="card-title flex justify-center">Login Form</h2>
+            <form>
+              <div className='card-body flex flex-col gap-5 p-5'>
+                <input type="text"
+                  placeholder='Email or phone number'
+                  className='input input-bordered w-full' />
+                <input type="password"
+                  placeholder='password'
+                  className='input input-bordered w-full' />
+
+                <div class="card-actions justify-center">
+                  <button class="btn btn-active btn-neutral w-full">Login</button>
+                  <a className='text-center link link-hover flex-grow-0'>Forgot password?</a>
+                  <hr />
+                  <button class="btn btn-active bg-lime-500 border-lime-500 w-full">Create new account</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-
-      <TripCard />
     </div>
-  );
-};
 
-export default TripList;
+  )
+}
+
+export default Login
