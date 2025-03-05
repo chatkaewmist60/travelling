@@ -12,10 +12,17 @@ function Navbar() {
      console.log(pathname)
 
      let navigate = useNavigate();
-     const routeChange = () => {
+     const routeChangRegister = () => {
           let path = '/register';
           navigate(path);
      }
+
+     const routeChangeLogin = () => {
+          let path = '/login';
+          navigate(path);
+     } 
+     
+
 
      return (
           <div className="flex items-center justify-between w-[80vw] mx-auto py-4">
@@ -44,12 +51,12 @@ function Navbar() {
                     <button className="py-3 px-7 rounded-full 
                     bg-orange-500 
                     text-white hover:underline 
-                    cursor-pointer " onClick={routeChange}>Register</button>
+                    cursor-pointer " onClick={routeChangRegister}>Register</button>
 
                     <button className="py-3 px-7 rounded-full 
                     bg-orange-500 
                     text-white hover:underline 
-                    cursor-pointer " onClick={routeChange}>Login</button>
+                    cursor-pointer " onClick={routeChangeLogin}>Login</button>
                </div>
           </div>
      )

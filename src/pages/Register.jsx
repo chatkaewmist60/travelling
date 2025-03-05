@@ -15,33 +15,33 @@ function Register() {
 	const [input, setInput] = useState(initInput)
 
 	const hdlChange = e => {
-		setInput( prv => ({...prv, [e.target.name] : e.target.value}))
+		setInput(prv => ({ ...prv, [e.target.name]: e.target.value }))
 	}
 
 	const hdlClearInput = () => {
-	 setInput(initInput)
+		setInput(initInput)
 	}
 
 	const hdlRegister = async e => {
-		try	{
-			const {firstName, lastName, identity, password, confirmPassword} = input
+		try {
+			const { firstName, lastName, identity, password, confirmPassword } = input
 			e.preventDefault()
 			// ** validation
-			if(!firstName.trim() || !lastName.trim() || !identity.trim() || !password.trim()) {
+			if (!firstName.trim() || !lastName.trim() || !identity.trim() || !password.trim()) {
 				return toast.error('Please fill all inputs')
 			}
-			if(password !== confirmPassword) {
+			if (password !== confirmPassword) {
 				return toast('Password and Confirm password unmatched!!')
 			}
 			// toast.success(JSON.stringify(input), {position : 'top-center'})
-	
+
 			// ** send request to backend
-			const rs = await axios.post('http://localhost:8899/auth/register', input)
+			const rs = await axios.post('http://localhost:8000/users/register', input)
 
 			hdlClearInput()
-			document.getElementById('register-form').close()
+			// document.getElementById('register-form').close()
 			toast('Register successful')
-		}catch(err) {
+		} catch (err) {
 			console.log(err)
 			const errMsg = err.response?.data?.error || err.message
 			toast.error(errMsg)
@@ -54,14 +54,14 @@ function Register() {
 			<div className="divider opacity-60"></div>
 			<form onSubmit={hdlRegister} className='flex flex-col gap-5 p-4 pt-3'>
 				<div className="flex gap-2">
-					<input type="text" 
+					<input type="text"
 						placeholder='First name'
 						className='input input-bordered w-full'
 						name='firstName'
 						value={input.firstName}
 						onChange={hdlChange}
 					/>
-					<input type="text" 
+					<input type="text"
 						placeholder='Last name'
 						className='input input-bordered w-full'
 						name='lastName'
@@ -69,26 +69,26 @@ function Register() {
 						onChange={hdlChange}
 					/>
 				</div>
-				<input type="text" 
-						placeholder='Email or Phone number'
-						className='input input-bordered w-full'
-						name='identity'
-						value={input.identity}
-						onChange={hdlChange}
+				<input type="text"
+					placeholder='Email or Phone number'
+					className='input input-bordered w-full'
+					name='identity'
+					value={input.identity}
+					onChange={hdlChange}
 				/>
-				<input type="password" 
-						placeholder='New password'
-						className='input input-bordered w-full'
-						name='password'
-						value={input.password}
-						onChange={hdlChange}
+				<input type="password"
+					placeholder='New password'
+					className='input input-bordered w-full'
+					name='password'
+					value={input.password}
+					onChange={hdlChange}
 				/>
-				<input type="password" 
-						placeholder='Confirm password'
-						className='input input-bordered w-full'
-						name='confirmPassword'
-						value={input.confirmPassword}
-						onChange={hdlChange}
+				<input type="password"
+					placeholder='Confirm password'
+					className='input input-bordered w-full'
+					name='confirmPassword'
+					value={input.confirmPassword}
+					onChange={hdlChange}
 				/>
 				<button className='btn btn-secondary text-xl text-white'>Sign up</button>
 				<button className='btn btn-warning text-xl text-white'

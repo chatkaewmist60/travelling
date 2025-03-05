@@ -1,8 +1,15 @@
 import React from 'react'
+import PostComponent from '../components/PostComponent'
 
 function SharePlanPage() {
   return (
-    <div>sharePlanPage</div>
+    <div>
+
+
+<PostComponent />
+
+
+    </div>
   )
 }
 

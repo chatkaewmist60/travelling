@@ -6,6 +6,9 @@ import SharePlanPage from "../pages/sharePlanPage"
 import Navbar from "../components/Navbar"
 import Register from "../pages/Register"
 import Login from "../pages/Login"
+import BlockPost from "../components/BlockPost"
+import MemberHomepage from "../pages/memberHomepage"
+import CreatePlanPage from "../pages/CreatePlanPage"
 
 const guestRouter = createBrowserRouter([
      {
@@ -20,7 +23,13 @@ const guestRouter = createBrowserRouter([
                { path: 'tour', element: <ToursPage /> },
                { path: 'share', element: <SharePlanPage /> },
                { path: 'register', element: <Register /> },
-               { path: 'login', element: <Login /> }
+               { path: 'blockpost', element: <BlockPost /> },
+               { path: 'login', element: <Login /> },
+               { path: 'memberhomepage', element: <MemberHomepage /> },
+               { path: 'createplan', element: <CreatePlanPage /> },
+
+
+
 
           ]
      }
