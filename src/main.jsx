@@ -11,5 +11,5 @@ createRoot(document.getElementById('root')).render(
     autoClose={2000}
     transition={Slide}
     />
-  </>
+  </> 
 )
